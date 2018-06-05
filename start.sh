@@ -20,3 +20,6 @@ pip3 install dicttoxml
 
 echo "***Running snakemake"
 snakemake
+
+echo "***Exiting virtual env"
+deactivate
