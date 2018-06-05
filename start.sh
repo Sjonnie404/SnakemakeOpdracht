@@ -15,6 +15,8 @@ pip3 install snakemake
 
 echo "***Installing other needed librarys..."
 pip3 install biopython
+pip3 install pandas
+pip3 install dicttoxml
 
 echo "***Running snakemake"
-
+snakemake

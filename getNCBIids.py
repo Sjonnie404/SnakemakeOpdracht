@@ -13,7 +13,7 @@ for line in IDs:
 
 print(id)
 
-handle = Entrez.efetch(db="gene", id=id, rettype="gb", retmode="text")
+handle = Entrez.eread(db="gene", term=id)
 record = Entrez.read(handle)
 handle.close()
 

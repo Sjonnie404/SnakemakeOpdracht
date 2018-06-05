@@ -1,4 +1,0 @@
-Building DAG of jobs...
-MissingInputException in line 5 of /home/shane/Documents/GIT/SnakemakeOpdracht/Snakefile:
-Missing input files for rule all:
-idXML.XML

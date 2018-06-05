@@ -2,8 +2,12 @@ from dicttoxml import dicttoxml
 import json
 from xml.dom.minidom import parseString
 
+input = snakemake.input[0]
+output = snakemake.output[0]
+
 #IDs = open("countsIDs.csv", "r")
-IDs = snakemake.input[0]
+IDs = open(input, "r")
+print(IDs)
 
 array = []
 for line in IDs:
@@ -17,8 +21,10 @@ for line in IDs:
 xml = dicttoxml(array, custom_root='IDLIST',attr_type=False)
 #print(xml)
 xml = parseString(xml)
-#print(xml.toprettyxml())
+print(xml.toprettyxml())
+xml = xml.toprettyxml()
 
 #outputFile = open("idXML.xml", "a")
-outputFile = snakemake.output[0]
-outputFile.write(xml.toprettyxml())
+
+outputFile = open(output, "a")
+outputFile.write(xml)
