@@ -1,5 +1,9 @@
 channels:
  - r
+ - python
 dependencies:
  - r=3.3.1
  - r-ggplot2=2.1.0
+ - python=3.6
+ - python-sys
+ - python-pandas

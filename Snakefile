@@ -1,23 +1,21 @@
-# Imports   -----
-from snakemake.utils import R
-
-
+# (c) Shane Pullens
 # Globals   -----
-FILE = 'data/RNA-Seq-counts.txt'
-
 
 # Rules     -----
 rule all:
-    input:
-        'data/RNA-Seq-counts.txt'
+    input: 'idXML.xml'              #latest rule output file.
 
 rule getGeneID:
-    input:
-        FILE
-    output:
-        'data/trimmedFile.txt'
-    script:
-        "{scripts/} trimIDs.r {input} {output}"
+    input:  "RNA-Seq-counts.txt"
+    output: "countsIDs.csv"
+    script: "getGenes.py"
 
+rule listToXML:
+    input:  "countsIDs.csv"
+    output: "idXML.xml"
+    script: "idListtoXML.py"
 
-### STOPPED USING SNAKEMAKE BECAUSE OF SHITTY DOCUMENTATION & SMALL COMMUNITY ###
+rule getNCBI:
+    input: "countsIDs.csv"
+    output: "NCBIids.csv"
+    script: "getNCBIids.py"

@@ -1,0 +1,2 @@
+SyntaxError in line 20 of /home/shane/Documents/GIT/SnakemakeOpdracht/Snakefile:
+Unexpected keyword RUN in rule definition (Snakefile, line 20)
