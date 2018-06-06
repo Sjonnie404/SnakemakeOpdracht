@@ -7,7 +7,7 @@ output = snakemake.output[0]
 
 #IDs = open("countsIDs.csv", "r")
 IDs = open(input, "r")
-print(IDs)
+#print(IDs)
 
 array = []
 for line in IDs:
@@ -21,7 +21,7 @@ for line in IDs:
 xml = dicttoxml(array, custom_root='IDLIST',attr_type=False)
 #print(xml)
 xml = parseString(xml)
-print(xml.toprettyxml())
+#print(xml.toprettyxml())
 xml = xml.toprettyxml()
 
 #outputFile = open("idXML.xml", "a")

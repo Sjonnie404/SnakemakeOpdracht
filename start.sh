@@ -21,5 +21,8 @@ pip3 install dicttoxml
 echo "***Running snakemake"
 snakemake
 
+echo "***Generating workflow"
+snakemake --forceall --dag | dot -Tpdf > data/dag.pdf
+
 echo "***Exiting virtual env"
 deactivate

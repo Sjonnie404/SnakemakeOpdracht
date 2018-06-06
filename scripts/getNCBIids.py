@@ -11,17 +11,17 @@ for line in IDs:
     id.append(line)
     #id += line
 
-print(id)
+#print(id)
 
-handle = Entrez.eread(db="gene", term=id)
+handle = Entrez.esearch(db="pubmed", term=id)
 record = Entrez.read(handle)
 handle.close()
 
-print(record.id)
-print(record.name)
-print(record.description)
-print(len(record.features))
-print(repr(record.seq))
+#print(record.id)
+#print(record.name)
+#print(record.description)
+#print(len(record.features))
+#print(repr(record.seq))
 
 
 # Entrez.email = "shane.pullens@hotmail.com"     # Always tell NCBI who you are

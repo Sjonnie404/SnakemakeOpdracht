@@ -12,12 +12,13 @@ aantal = 50
 
 for line in file:
 
-    print(line)
+    #print(line)
     handle = Entrez.esearch(db=db, term=line, retmax=aantal)
     record = Entrez.read(handle)
     idlist = record["IdList"]
-    print(idlist)
-    outfile.write("\n".join(idlist))
+    #print(idlist)
+    if idlist != "[]":
+        outfile.write("\n"+ str(idlist).replace("[","").replace("]","").replace("'","").replace(",",""))
 
 outfile.close()
 
